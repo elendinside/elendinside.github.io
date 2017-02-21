@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Je suis Renick.</title>
+    <atom:link href="https://elendinside.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <link>https://elendinside.github.io</link>
+    <description>Just some words from just an other developer and open minded boy.</description>
+    <pubDate>Wed, 28 Dec 2016 01:00:00 +0100</pubDate>
+    <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
+    <language>en</language>
+    <item>
+      <title>Responsive layout with sidebar</title>
+      <link>https://elendinside.github.io/articles/responsive-sidebar-layout/</link>
+      <pubDate>Wed, 28 Dec 2016 01:00:00 +0100</pubDate>
+      <guid isPermaLink="true">https://elendinside.github.io/articles/responsive-sidebar-layout/</guid>
+      <author></author>
+      <description>&lt;p&gt;Since the first websites were published, there was a layout with sidebar.
+For my blog, I want to create a sidebar, which looks nice on every screen.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Since the first websites were published, there was a layout with sidebar. I really like sidebars. Sidebars are great for navigation or just containing some (short) information.&lt;/p&gt;
+&lt;p&gt;For my blog, I want to create a sidebar, which looks nice on every screen. In addition, I want just a blog without hundreds of features. That’s the reason why I choose a static site generator, SASS and Pug (earlier Jade). I won’t use any pre-processor now, because for these few line of code, it’s useless.&lt;/p&gt;
+&lt;p&gt;I placed comments between the line of codes, to describe what the following part of code makes. For expressing length, I use &lt;strong&gt;em&lt;/strong&gt; or &lt;strong&gt;rem&lt;/strong&gt;. These are relative units, more &lt;a href=&quot;http://www.w3.org/Style/Examples/007/units.en.html&quot;&gt;here&lt;/a&gt;. Next, I use flexible boxes, which are a CSS3 feature, all about &lt;a href=&quot;http://www.w3.org/TR/css-flexbox-1/&quot;&gt;that&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;I have linked the result &lt;a href=&quot;/articles/responsive-sidebar-layout/sidebar.html&quot;&gt;here&lt;/a&gt; and following is the source:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-html&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;lang&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;en&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;charset&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;http-equiv&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;X-UA-Compatible&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;content&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;IE=edge,chrome=1&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;content&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;width=device-width&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;Page title&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;https://fonts.googleapis.com/css?family=Fjalla+One|PT+Sans&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- link the stylesheet --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;layout.css&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;aside&lt;/span&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- some sample content --&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;about&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://elendinsi.de/stuff/renick.png&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;Je suis Renick&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;
+                Hello! I’m Renick, 17 years old and from Germany. Just an open-minded, good-humored person, love to travel around &amp;amp;amp; exploring
+                new cities. Currently learning English, French &amp;amp;amp; doing some programming stuff.
+            &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- end of sample content --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;aside&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;main&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- here is place for content --&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;Page content...&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-css&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/**
+  * Setup some base stuff
+  */&lt;/span&gt;
+
+&lt;span class=&quot;selector-tag&quot;&gt;h1&lt;/span&gt;,&lt;span class=&quot;selector-tag&quot;&gt;h2&lt;/span&gt;,&lt;span class=&quot;selector-tag&quot;&gt;h3&lt;/span&gt;,&lt;span class=&quot;selector-tag&quot;&gt;h4&lt;/span&gt;,&lt;span class=&quot;selector-tag&quot;&gt;h5&lt;/span&gt;,&lt;span class=&quot;selector-tag&quot;&gt;h6&lt;/span&gt;,&lt;span class=&quot;selector-tag&quot;&gt;p&lt;/span&gt;,&lt;span class=&quot;selector-tag&quot;&gt;body&lt;/span&gt;,&lt;span class=&quot;selector-tag&quot;&gt;a&lt;/span&gt;,&lt;span class=&quot;selector-tag&quot;&gt;img&lt;/span&gt;,&lt;span class=&quot;selector-tag&quot;&gt;ul&lt;/span&gt;,&lt;span class=&quot;selector-tag&quot;&gt;ol&lt;/span&gt;,&lt;span class=&quot;selector-tag&quot;&gt;blockquote&lt;/span&gt;,&lt;span class=&quot;selector-tag&quot;&gt;pre&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;margin&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;span class=&quot;attribute&quot;&gt;padding&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;span class=&quot;attribute&quot;&gt;border&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+}
+
+&lt;span class=&quot;selector-tag&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:hover&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;color&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;#3e8cca&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;text-decoration&lt;/span&gt;: underline
+}
+
+&lt;span class=&quot;selector-tag&quot;&gt;p&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;margin-bottom&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1.52em&lt;/span&gt;
+}
+
+&lt;span class=&quot;selector-tag&quot;&gt;h1&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;2em&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;margin-bottom&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1em&lt;/span&gt;
+}
+
+&lt;span class=&quot;selector-tag&quot;&gt;h2&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1.2em&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;font-weight&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;400&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;line-height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1.43&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;margin-bottom&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1.35em&lt;/span&gt;
+}
+
+&lt;span class=&quot;selector-tag&quot;&gt;h3&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;font-style&lt;/span&gt;: italic;
+    &lt;span class=&quot;attribute&quot;&gt;text-align&lt;/span&gt;: center;
+    &lt;span class=&quot;attribute&quot;&gt;font-weight&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;400&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1.4em&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;margin-top&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1.8em&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;margin-bottom&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0.8em&lt;/span&gt;
+}
+
+&lt;span class=&quot;selector-tag&quot;&gt;ol&lt;/span&gt;,
+&lt;span class=&quot;selector-tag&quot;&gt;ul&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;margin&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1.4em&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1.4em&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;4em&lt;/span&gt;
+}
+
+&lt;span class=&quot;selector-tag&quot;&gt;li&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;margin-bottom&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0.5em&lt;/span&gt;
+}
+
+&lt;span class=&quot;selector-tag&quot;&gt;blockquote&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;margin&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1.2em&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;3em&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;padding-left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1em&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;font-style&lt;/span&gt;: italic
+}
+
+&lt;span class=&quot;selector-tag&quot;&gt;hr&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;border&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;border-top&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1px&lt;/span&gt; dashed &lt;span class=&quot;number&quot;&gt;#d2d2d2&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;margin&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1.6em&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+}
+
+@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; (min-width: &lt;span class=&quot;number&quot;&gt;1600px&lt;/span&gt;) {
+    &lt;span class=&quot;selector-tag&quot;&gt;body&lt;/span&gt; {
+        &lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;26px&lt;/span&gt;
+    }
+}
+
+@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; (max-width: &lt;span class=&quot;number&quot;&gt;900px&lt;/span&gt;) {
+    &lt;span class=&quot;selector-tag&quot;&gt;body&lt;/span&gt; {
+        &lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;18px&lt;/span&gt;
+    }
+}
+
+&lt;span class=&quot;selector-tag&quot;&gt;body&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;font-family&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;PT Sans&quot;&lt;/span&gt;, sans-serif;
+    &lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;21px&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;line-height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1.52&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;background-color&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rgb&lt;/span&gt;(85.2%, 91.7%, 71.9%);
+    &lt;span class=&quot;attribute&quot;&gt;text-rendering&lt;/span&gt;: optimizeLegibility
+}
+
+&lt;span class=&quot;selector-tag&quot;&gt;body&lt;/span&gt;,
+&lt;span class=&quot;selector-tag&quot;&gt;a&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;color&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;#171717&lt;/span&gt;
+}
+
+&lt;span class=&quot;comment&quot;&gt;/**
+  * container for content
+  */&lt;/span&gt;
+
+&lt;span class=&quot;selector-class&quot;&gt;.main&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;20rem&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;padding&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;2rem&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;3rem&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;position&lt;/span&gt;: absolute;
+    &lt;span class=&quot;attribute&quot;&gt;right&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0px&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;top&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0px&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;overflow-x&lt;/span&gt;: hidden
+}
+
+&lt;span class=&quot;comment&quot;&gt;/**
+  * sidebar 
+  */&lt;/span&gt;
+
+&lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;position&lt;/span&gt;: fixed;
+    &lt;span class=&quot;attribute&quot;&gt;z-index&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;20rem&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;100%&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;overflow-y&lt;/span&gt;: auto;
+    &lt;span class=&quot;attribute&quot;&gt;text-align&lt;/span&gt;: center;
+    &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;: flex;
+    &lt;span class=&quot;attribute&quot;&gt;align-items&lt;/span&gt;: center;
+    &lt;span class=&quot;attribute&quot;&gt;justify-content&lt;/span&gt;: center;
+    &lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rgb&lt;/span&gt;(15.6%, 55%, 15.6%);
+    &lt;span class=&quot;attribute&quot;&gt;color&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;#fff&lt;/span&gt;
+}
+
+&lt;span class=&quot;comment&quot;&gt;/**
+  * format some sample content in the sidebar 
+  */&lt;/span&gt;
+
+&lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.about&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;padding&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;2em&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;text-align&lt;/span&gt;: center
+}
+
+&lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.about&lt;/span&gt;&amp;gt;&lt;span class=&quot;selector-tag&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:first-child&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;text-align&lt;/span&gt;: center
+}
+
+&lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.about&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;h1&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;margin-bottom&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0.5em&lt;/span&gt;
+}
+
+&lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.about&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;a&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;2rem&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;text-decoration&lt;/span&gt;: none;
+    &lt;span class=&quot;attribute&quot;&gt;font-family&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;Fjalla One&quot;&lt;/span&gt;, sans-serif;
+    &lt;span class=&quot;attribute&quot;&gt;color&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;#fff&lt;/span&gt;
+}
+
+&lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.about&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:not(&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:first-child)&lt;/span&gt; {
+    &lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0.8em&lt;/span&gt;;
+    &lt;span class=&quot;attribute&quot;&gt;text-align&lt;/span&gt;: justify
+}
+
+&lt;span class=&quot;comment&quot;&gt;/**
+  * for screens smaller 866px
+  */&lt;/span&gt;
+
+@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; (max-width: &lt;span class=&quot;number&quot;&gt;866px&lt;/span&gt;) {
+    &lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt;,
+    &lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;img&lt;/span&gt;,
+    &lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.about&lt;/span&gt; {
+        &lt;span class=&quot;attribute&quot;&gt;margin&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; auto
+    }
+    &lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.about&lt;/span&gt; {
+        &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;90%&lt;/span&gt;
+    }
+    &lt;span class=&quot;selector-class&quot;&gt;.main&lt;/span&gt; {
+        &lt;span class=&quot;attribute&quot;&gt;left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;
+        &lt;span class=&quot;attribute&quot;&gt;right&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;
+        &lt;span class=&quot;attribute&quot;&gt;top&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;
+        &lt;span class=&quot;attribute&quot;&gt;bottom&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;
+        &lt;span class=&quot;attribute&quot;&gt;position&lt;/span&gt;: relative;
+        &lt;span class=&quot;attribute&quot;&gt;overflow-x&lt;/span&gt;: hidden
+    }
+    &lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt; {
+        &lt;span class=&quot;attribute&quot;&gt;position&lt;/span&gt;: relative;
+        &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: auto;
+        &lt;span class=&quot;attribute&quot;&gt;overflow&lt;/span&gt;: auto;
+        &lt;span class=&quot;attribute&quot;&gt;text-align&lt;/span&gt;: center;
+        &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;: block;
+        &lt;span class=&quot;attribute&quot;&gt;padding&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1rem&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;3rem&lt;/span&gt;;
+        &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: auto
+    }
+    &lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.about&lt;/span&gt; {
+        &lt;span class=&quot;attribute&quot;&gt;padding&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+    }
+    &lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.about&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;h1&lt;/span&gt; {
+        &lt;span class=&quot;attribute&quot;&gt;margin-bottom&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0em&lt;/span&gt;
+    }
+    &lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.about&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;a&lt;/span&gt; {
+        &lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;3rem&lt;/span&gt;
+    }
+    &lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.about&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:not(&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:first-child)&lt;/span&gt; {
+        &lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1.2rem&lt;/span&gt;;
+        &lt;span class=&quot;attribute&quot;&gt;text-align&lt;/span&gt;: justify
+    }
+    &lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.about&lt;/span&gt;&amp;gt;&lt;span class=&quot;selector-tag&quot;&gt;p&lt;/span&gt; {
+        &lt;span class=&quot;attribute&quot;&gt;margin-bottom&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+    }
+    &lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;img&lt;/span&gt; {
+        &lt;span class=&quot;attribute&quot;&gt;padding&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1em&lt;/span&gt;;
+        &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;80%&lt;/span&gt;;
+        &lt;span class=&quot;attribute&quot;&gt;max-width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;128px&lt;/span&gt;;
+        &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;: block
+    }
+}
+
+@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; (max-width: &lt;span class=&quot;number&quot;&gt;380px&lt;/span&gt;) {
+    &lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.about&lt;/span&gt; {
+        &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;100%&lt;/span&gt;
+    }
+    &lt;span class=&quot;selector-tag&quot;&gt;aside&lt;/span&gt;,
+    &lt;span class=&quot;selector-class&quot;&gt;.main&lt;/span&gt; {
+        &lt;span class=&quot;attribute&quot;&gt;padding&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1em&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1em&lt;/span&gt;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,208 @@
+/**
+  * Setup some base stuff
+  */
+
+h1,h2,h3,h4,h5,h6,p,body,a,img,ul,ol,blockquote,pre {
+    margin: 0; padding: 0; border: 0
+}
+
+a:hover {
+    color: #3e8cca;
+    text-decoration: underline
+}
+
+p {
+    margin-bottom: 1.52em
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 1em
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.43;
+    margin-bottom: 1.35em
+}
+
+h3 {
+    font-style: italic;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.4em;
+    margin-top: 1.8em;
+    margin-bottom: 0.8em
+}
+
+ol,
+ul {
+    margin: 0 1.4em 1.4em 4em
+}
+
+li {
+    margin-bottom: 0.5em
+}
+
+blockquote {
+    margin: 1.2em 3em;
+    padding-left: 1em;
+    font-style: italic
+}
+
+hr {
+    border: 0;
+    border-top: 1px dashed #d2d2d2;
+    height: 0;
+    margin: 1.6em 0
+}
+
+@media (min-width: 1600px) {
+    body {
+        font-size: 26px
+    }
+}
+
+@media (max-width: 900px) {
+    body {
+        font-size: 18px
+    }
+}
+
+body {
+    font-family: "PT Sans", sans-serif;
+    font-size: 21px;
+    line-height: 1.52;
+    background-color: rgb(85.2%, 91.7%, 71.9%);
+    text-rendering: optimizeLegibility
+}
+
+body,
+a {
+    color: #171717
+}
+
+/**
+  * container for content
+  */
+
+.main {
+    left: 20rem;
+    padding: 2rem 3rem 0;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    overflow-x: hidden
+}
+
+/**
+  * sidebar 
+  */
+
+aside {
+    position: fixed;
+    z-index: 1;
+    width: 20rem;
+    height: 100%;
+    overflow-y: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(15.6%, 55%, 15.6%);
+    color: #fff
+}
+
+/**
+  * format some sample content in the sidebar 
+  */
+
+aside .about {
+    padding: 2em;
+    text-align: center
+}
+
+aside .about>p:first-child {
+    text-align: center
+}
+
+aside .about h1 {
+    margin-bottom: 0.5em
+}
+
+aside .about h1 a {
+    font-size: 2rem;
+    text-decoration: none;
+    font-family: "Fjalla One", sans-serif;
+    color: #fff
+}
+
+aside .about p:not(:first-child) {
+    font-size: 0.8em;
+    text-align: justify
+}
+
+/**
+  * for screens smaller 866px
+  */
+
+@media (max-width: 866px) {
+    aside,
+    aside img,
+    aside .about {
+        margin: 0 auto
+    }
+    aside .about {
+        width: 90%
+    }
+    .main {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: relative;
+        overflow-x: hidden
+    }
+    aside {
+        position: relative;
+        height: auto;
+        overflow: auto;
+        text-align: center;
+        display: block;
+        padding: 1rem 3rem;
+        width: auto
+    }
+    aside .about {
+        padding: 0
+    }
+    aside .about h1 {
+        margin-bottom: 0em
+    }
+    aside .about h1 a {
+        font-size: 3rem
+    }
+    aside .about p:not(:first-child) {
+        font-size: 1.2rem;
+        text-align: justify
+    }
+    aside .about>p {
+        margin-bottom: 0
+    }
+    aside img {
+        padding: 1em;
+        width: 80%;
+        max-width: 128px;
+        display: block
+    }
+}
+
+@media (max-width: 380px) {
+    aside .about {
+        width: 100%
+    }
+    aside,
+    .main {
+        padding: 1em 1em
+    }
+}
